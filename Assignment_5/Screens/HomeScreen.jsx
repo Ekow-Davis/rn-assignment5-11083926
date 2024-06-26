@@ -42,9 +42,9 @@ const HomeScreen = ({ navigation }) => {
             <View style={{ flexDirection: 'row', marginBottom: 10,  }}>
               <Image source={Profile} style={{ marginLeft: 30, margin: 8, marginRight: 10 }} />
 
-              <View style={{ marginRight: 70 }}>
+              <View style={{ marginRight: 50 }}>
                 <Text style={{ fontSize: 12, fontWeight: 'ultralight', margin: 1, marginLeft: 5, marginTop: 10, color: colors.textColor }}>Welcome back,</Text>
-                <Text style={{ fontWeight: 'bold', fontSize: 22, color: colors.textColor }}>Eric Atsu</Text>
+                <Text style={{ fontWeight: 'bold', fontSize: 22, color: colors.textColor }}>Ekow Davis </Text>
               </View>
 
               <View style={[styles.imageContainer, { backgroundColor: isDarkTheme ? '#08192D' : '#f1f1f1' }]}>

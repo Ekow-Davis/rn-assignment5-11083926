@@ -47,7 +47,7 @@ const App = () => {
             },
             tabBarActiveTintColor: 'blue',
             tabBarInactiveTintColor: 'gray',
-            tabBarStyle: { height: 70 },
+            tabBarStyle: { height: 70, },
             tabBarLabelStyle: { paddingBottom: 10, fontSize: 14 }
           })}
         >
