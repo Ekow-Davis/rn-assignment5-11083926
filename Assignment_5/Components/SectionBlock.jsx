@@ -3,7 +3,7 @@ import { Image, View, Text, StyleSheet } from 'react-native';
 
 const appleImage = require('../assets/apple.png')
 
-const TransferBlock = ({ imageUrl, amountColour, label, miniLabel, pay }) => {
+const SectionBlock = ({ imageUrl, amountColour, label, miniLabel, pay }) => {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -65,4 +65,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default TransferBlock;
+export default SectionBlock;
