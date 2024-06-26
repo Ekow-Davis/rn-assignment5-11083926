@@ -12,8 +12,8 @@ const SettingsScreen = ({navigation}) => {
 
   return (
     <>
-    <SafeAreaView style={{flex: 1,}}>
-    <View style={styles.container}>
+    <SafeAreaView style={[{flex: 1, backgroundColor: '#fff',}, isDarkTheme && styles.darkContainer]}>
+    <View style={[styles.container, isDarkTheme && styles.darkContainer]}>
     <StatusBar style="auto"/>
     <ScrollView>
     {/*Code body*/}
@@ -21,58 +21,64 @@ const SettingsScreen = ({navigation}) => {
     <View style={{marginBottom: 15, marginTop: 30,}}>
         <Text
         onPress={() => { navigation.navigate('HomeScreen')}}
-        style={{fontSize: 20, fontWeight: 'bold', marginBottom: 30, alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}
+        style={[{fontSize: 20, fontWeight: 'bold', marginBottom: 30, alignItems: 'center', justifyContent: 'center', textAlign: 'center' },isDarkTheme && styles.darkText ]}
         >Settings</Text>
 
         <View style={{margin: 10, flexDirection: 'column',}}>
           
           <View style={{flexDirection: 'row', justifyContent: 'space-between', marginVertical: 10, alignItems: 'center',}}>
-            <Text style={{fontSize: 18, fontWeight: 'bold', margin: 15, }}>
+            <Text style={[{fontSize: 18, fontWeight: 'bold', margin: 10, }, isDarkTheme && styles.darkText]}>
               Language
             </Text>
-            <Ionicons name="chevron-forward" size={24} color="#000" />
+            <Ionicons name="chevron-forward" style={{marginRight: 10,}} size={24} color={isDarkTheme ? '#fff' : '#000'} />
           </View>        
-          <View style={{flex: 1, width: 340, top: -8, marginLeft:10, height: 1, backgroundColor: '#ccc', opacity: 0.4,}}/>
+          <View style={{flex: 1, width: 350, top: -8, marginLeft:10, height: 1, backgroundColor: '#ccc', opacity: 0.4,}}/>
           
           <View style={{flexDirection: 'row', justifyContent: 'space-between', marginVertical: 10, alignItems: 'center',}}>
-          <Text style={{fontSize: 18, fontWeight: 'bold', margin: 15, }}>
+          <Text style={[{fontSize: 18, fontWeight: 'bold', margin: 10, }, isDarkTheme && styles.darkText]}>
             My Profile
           </Text>
-          <Ionicons name="chevron-forward" size={24} color="#000" />          
+          <Ionicons name="chevron-forward" size={24} style={{marginRight: 10,}} color={isDarkTheme ? '#fff' : '#000'} />          
           </View>
-          <View style={{flex: 1, width: 340, top: -8, marginLeft:10, height: 1, backgroundColor: '#ccc', opacity: 0.4,}}/>
+          <View style={{flex: 1, width: 350, top: -8, marginLeft:10, height: 1, backgroundColor: '#ccc', opacity: 0.4,}}/>
           
           <View style={{flexDirection: 'row', justifyContent: 'space-between', marginVertical: 10, alignItems: 'center',}}>
-          <Text style={{fontSize: 18, fontWeight: 'bold', margin: 15, }}>
+          <Text style={[{fontSize: 18, fontWeight: 'bold', margin: 10, }, isDarkTheme && styles.darkText]}>
             Contact Us
           </Text>
-          <Ionicons name="chevron-forward" size={24} color="#000" />      
+          <Ionicons name="chevron-forward" size={24} style={{marginRight: 10,}} color={isDarkTheme ? '#fff' : '#000'} />      
         </View>
-        <View style={{flex: 1, width: 340, top: -8, marginLeft:10, height: 1, backgroundColor: '#ccc', opacity: 0.4,}}/>
+        <View style={{flex: 1, width: 350, top: -8, marginLeft:10, height: 1, backgroundColor: '#ccc', opacity: 0.4,}}/>
           
         <View style={{flexDirection: 'row', justifyContent: 'space-between', marginVertical: 10, alignItems: 'center',}}>
-          <Text style={{fontSize: 18, fontWeight: 'bold', margin: 15, }}>
+          <Text style={[{fontSize: 18, fontWeight: 'bold', margin: 10, }, isDarkTheme && styles.darkText]}>
             Change Password
           </Text>
-          <Ionicons name="chevron-forward" size={24} color="#000" />
+          <Ionicons name="chevron-forward" size={24} style={{marginRight: 10,}} color={isDarkTheme ? '#fff' : '#000'} />
         </View>
-        <View style={{flex: 1, width: 340, top: -8, marginLeft:10, height: 1, backgroundColor: '#ccc', opacity: 0.4,}}/>
+        <View style={{flex: 1, width: 350, top: -8, marginLeft:10, height: 1, backgroundColor: '#ccc', opacity: 0.4,}}/>
           
           <View style={{flexDirection: 'row', justifyContent: 'space-between', marginVertical: 10, alignItems: 'center',}}>
-            <Text style={{fontSize: 18, fontWeight: 'bold', margin: 15, }}>
+            <Text style={[{fontSize: 18, fontWeight: 'bold', margin: 10, }, isDarkTheme && styles.darkText]}>
                 Privacy Policy
             </Text>
-            <Ionicons name="chevron-forward" size={24} color="#000" />
+            <Ionicons name="chevron-forward" size={24} style={{marginRight: 10,}} color={isDarkTheme ? '#fff' : '#000'} />
         </View>
-        <View style={{flex: 1, width: 340, top: -8, marginLeft:10, height: 1, backgroundColor: '#ccc', opacity: 0.4,}}/>
+        <View style={{flex: 1, width: 350, top: -8, marginLeft:10, height: 1, backgroundColor: '#ccc', opacity: 0.4,}}/>
         
         </View>
 
-        <View>
-          <Text style={{fontSize: 24, fontWeight: 'bold', margin: 15, }}> Theme </Text>
-          <Switch style={{position: 'absolute', right: 70, top: 15, width: 10,}}/>
+        <View style={{flexDirection: 'row'}}>
+          <Text style={[{fontSize: 24, fontWeight: 'bold', margin: 10,}, isDarkTheme && styles.darkText]}> Theme </Text>
+          <Switch 
+          value={isDarkTheme}
+          onPress={() => {console.log('pressed')}}
+          onValueChange={() => setIsDarkTheme((previousState) => !previousState)}          
+          style={{marginLeft: 220, }}
+          />
         </View>
     </View>
+
 
     {/*Code body position: 'absolute',*/}
     </ScrollView>
@@ -87,6 +93,13 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: '#fff',
     },
+    darkContainer: {
+      backgroundColor: '#000',
+    },
+    darkText: {
+      color: '#fff',
+    },
+
   });
 
 export default SettingsScreen
