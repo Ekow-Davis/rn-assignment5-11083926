@@ -1,15 +1,21 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../ThemeContext';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { View, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
-const SectionBlock = ({ iconName }) => {
+const SectionBlock = ({ iconName, label }) => {
   const { colors, isDarkTheme } = useContext(ThemeContext);
 
   return (
-    <View style={[styles.imageContainer, { backgroundColor: isDarkTheme ? '#08192D' : '#f1f1f1' }]}>
+    <>
+    <View>
+       <View style={[styles.imageContainer, { backgroundColor: isDarkTheme ? '#08192D' : '#f1f1f1' }]}>
       <Ionicons name={iconName} size={30} color={colors.textColor} />
     </View>
+    <Text style={[{marginLeft: 30}, { color: colors.textColor }]}>{label}</Text>
+    </View>
+   
+    </>
   );
 };
 

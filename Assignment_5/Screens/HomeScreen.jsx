@@ -8,10 +8,10 @@ import TransferBlock from '../Components/TransferBlock';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const sectionData = [
-  { key: '1', iconName: "arrow-up-outline" },
-  { key: '2', iconName: "arrow-down-outline" },
-  { key: '3', iconName: "cloud-upload-outline" },
-  { key: '4', iconName: "cash-outline" }
+  { key: '1', iconName: "arrow-up-outline", label: "Send" },
+  { key: '2', iconName: "arrow-down-outline", label:"Recieve" },
+  { key: '3', iconName: "cash-outline", label: "Loan" },
+  { key: '4', iconName: "cloud-upload-outline", label: "TopUp" }
 ];
 
 const verticalData = [
@@ -63,6 +63,7 @@ const HomeScreen = ({ navigation }) => {
                 renderItem={({ item }) => (
                   <SectionBlock
                     iconName={item.iconName}
+                    label={item.label}
                   />
                 )}
                 contentContainerStyle={{ paddingLeft: 10, }}
