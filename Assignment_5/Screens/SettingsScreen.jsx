@@ -12,9 +12,8 @@ const SettingsScreen = ({ navigation }) => {
     <SafeAreaView style={[styles.container, { backgroundColor: colors.backgroundColor }]}>
       <StatusBar style={isDarkTheme ? 'light' : 'dark'} />
       <ScrollView>
-        <View style={{ marginBottom: 10, marginTop: 30 }}>
+        <View style={{ marginBottom: 0, marginTop: 50 }}>
           <Text
-            onPress={() => { navigation.navigate('HomeScreen') }}
             style={[styles.title, { color: colors.textColor }]}>
             Settings Screen
           </Text>

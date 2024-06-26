@@ -25,9 +25,11 @@ export const ThemeProvider = ({ children }) => {
 const lightTheme = {
   backgroundColor: '#fff',
   textColor: '#000',
+  tabBarBackground: '#ffffff',
 };
 
 const darkTheme = {
   backgroundColor: '#001123',
   textColor: '#fff',
+  tabBarBackground: '#08192D',
 };

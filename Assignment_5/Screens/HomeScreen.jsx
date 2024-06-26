@@ -37,10 +37,9 @@ const HomeScreen = ({ navigation }) => {
       <View style={[styles.container, { backgroundColor: colors.backgroundColor }]}>
         <StatusBar style={isDarkTheme ? 'light' : 'dark'} />
         <ScrollView>
-          <View style={{ marginBottom: 15,}}>
+          <View style={{ marginBottom: 15,  marginTop: 40}}>
             
-
-            <View style={{ flexDirection: 'row', marginBottom: 10 }}>
+            <View style={{ flexDirection: 'row', marginBottom: 10,  }}>
               <Image source={Profile} style={{ marginLeft: 30, margin: 8, marginRight: 10 }} />
 
               <View style={{ marginRight: 70 }}>
@@ -48,7 +47,7 @@ const HomeScreen = ({ navigation }) => {
                 <Text style={{ fontWeight: 'bold', fontSize: 22, color: colors.textColor }}>Eric Atsu</Text>
               </View>
 
-              <View style={[styles.imageContainer, { backgroundColor: isDarkTheme ? '#08192D' : colors.backgroundColor }]}>
+              <View style={[styles.imageContainer, { backgroundColor: isDarkTheme ? '#08192D' : '#f1f1f1' }]}>
               <Ionicons name="search-outline" size={20} color={colors.textColor} />
               </View>
             </View>

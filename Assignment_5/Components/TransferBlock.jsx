@@ -8,7 +8,7 @@ const TransferBlock = ({ iconName, amountColour, label, miniLabel, pay }) => {
 
   return (
     <View style={[styles.container]}>
-      <View style={[styles.iconContainer, , { backgroundColor: isDarkTheme ? '#08192D' : colors.backgroundColor }]}>
+      <View style={[styles.iconContainer, , { backgroundColor: isDarkTheme ? '#08192D' : '#f1f1f1' }]}>
         <Ionicons name={iconName} size={20} color={colors.textColor} />
       </View>
       <View style={styles.textContainer}>

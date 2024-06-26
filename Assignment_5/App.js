@@ -25,6 +25,7 @@ const SettingsStack = () => (
 );
 
 const App = () => {
+  
   return (
     <ThemeProvider>
       <NavigationContainer>
@@ -50,10 +51,10 @@ const App = () => {
             tabBarLabelStyle: { paddingBottom: 10, fontSize: 14 }
           })}
         >
-          <Tab.Screen name="Home" component={HomeStack} />
+          <Tab.Screen name="Home" component={HomeStack} options={{ headerShown: false }}/>
           <Tab.Screen name="Cards" component={DummyScreen} />
           <Tab.Screen name="Statistics" component={DummyScreen} />
-          <Tab.Screen name="Settings" component={SettingsStack} />
+          <Tab.Screen name="Settings" component={SettingsStack} options={{ headerShown: false }}/>
         </Tab.Navigator>
       </NavigationContainer>
     </ThemeProvider>

@@ -7,7 +7,7 @@ const SectionBlock = ({ iconName }) => {
   const { colors, isDarkTheme } = useContext(ThemeContext);
 
   return (
-    <View style={[styles.imageContainer, { backgroundColor: isDarkTheme ? '#08192D' : colors.backgroundColor }]}>
+    <View style={[styles.imageContainer, { backgroundColor: isDarkTheme ? '#08192D' : '#f1f1f1' }]}>
       <Ionicons name={iconName} size={30} color={colors.textColor} />
     </View>
   );
