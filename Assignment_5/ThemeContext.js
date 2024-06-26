@@ -28,6 +28,6 @@ const lightTheme = {
 };
 
 const darkTheme = {
-  backgroundColor: '#000',
+  backgroundColor: '#001123',
   textColor: '#fff',
 };

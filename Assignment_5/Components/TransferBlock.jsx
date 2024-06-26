@@ -8,14 +8,14 @@ const TransferBlock = ({ iconName, amountColour, label, miniLabel, pay }) => {
 
   return (
     <View style={[styles.container]}>
-      <View style={[styles.iconContainer]}>
+      <View style={[styles.iconContainer, , { backgroundColor: isDarkTheme ? '#08192D' : colors.backgroundColor }]}>
         <Ionicons name={iconName} size={20} color={colors.textColor} />
       </View>
       <View style={styles.textContainer}>
         <Text style={[styles.label, { color: colors.textColor }]}>{label}</Text>
         <Text style={[styles.miniLabel, { color: colors.textColor }]}>{miniLabel}</Text>
       </View>      
-      <Text style={[styles.pay, { color: isDarkTheme ?colors.textColor : amountColour }]}>{pay}</Text>
+      <Text style={[styles.pay, { color: isDarkTheme ? colors.textColor : amountColour }]}>{pay}</Text>
     </View>
   );
 };
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   iconContainer: {
-    borderRadius: 30,
+    borderRadius: 100,
     width: 50,
     height: 50,
     alignItems: 'center',

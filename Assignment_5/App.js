@@ -1,28 +1,70 @@
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import SettingsScreen from './Screens/SettingsScreen'
-import HomeScreen from './Screens/HomeScreen'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import SettingsScreen from './Screens/SettingsScreen';
+import HomeScreen from './Screens/HomeScreen';
 import { ThemeProvider, ThemeContext } from './ThemeContext';
 
-const Stack = createStackNavigator()
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
-export default function App() {
+const HomeStack = () => (
+  <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Screen name="HomeScreen" component={HomeScreen} />
+  </Stack.Navigator>
+);
+
+const SettingsStack = () => (
+  <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Screen name="Settings" component={SettingsScreen} />
+  </Stack.Navigator>
+);
+
+const App = () => {
   return (
-    <>
     <ThemeProvider>
       <NavigationContainer>
-        <Stack.Navigator>        
-          <Stack.Screen name="HomeScreen" component={HomeScreen} />
-          <Stack.Screen name="Settings" component={SettingsScreen} />
-        </Stack.Navigator>
+        <Tab.Navigator
+          screenOptions={({ route }) => ({
+            tabBarIcon: ({ focused, color, size }) => {
+              let iconName;
+
+              if (route.name === 'Home') {
+                iconName = focused ? 'home' : 'home-outline';
+              } else if (route.name === 'Cards') {
+                iconName = focused ? 'card' : 'card-outline';
+              } else if (route.name === 'Statistics') {
+                iconName = focused ? 'stats-chart' : 'stats-chart-outline';
+              } else if (route.name === 'Settings') {
+                iconName = focused ? 'settings' : 'settings-outline';
+              }
+              return <Ionicons name={iconName} size={size} color={color} />;
+            },
+            tabBarActiveTintColor: 'blue',
+            tabBarInactiveTintColor: 'gray',
+            tabBarStyle: { height: 70 },
+            tabBarLabelStyle: { paddingBottom: 10, fontSize: 14 }
+          })}
+        >
+          <Tab.Screen name="Home" component={HomeStack} />
+          <Tab.Screen name="Cards" component={DummyScreen} />
+          <Tab.Screen name="Statistics" component={DummyScreen} />
+          <Tab.Screen name="Settings" component={SettingsStack} />
+        </Tab.Navigator>
       </NavigationContainer>
     </ThemeProvider>
-    </>
-    
   );
-}
+};
+
+const DummyScreen = () => (
+  <View style={styles.container}>
+    <Text>This is a dummy screen</Text>
+  </View>
+);
 
 const styles = StyleSheet.create({
   container: {
@@ -32,3 +74,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default App;
