@@ -15,9 +15,9 @@ const sectionData = [
 ];
 
 const verticalData = [
-  { key: '1', iconName: 'logo-apple', pay: "$99", label: "Apple Store", miniLabel: "Entertainment", amountColour: 'blue' },
+  { key: '1', iconName: 'logo-apple', pay: "$92.99", label: "Apple Store", miniLabel: "Entertainment", amountColour: 'blue' },
   { key: '2', iconName: 'musical-notes-outline', pay: "$-6,99", label: "Spotify", miniLabel: "Music", amountColour: 'black' },
-  { key: '3', iconName: 'swap-horizontal-outline', pay: "$5,99", label: "Money Transfer", miniLabel: "Transaction", amountColour: 'blue' },
+  { key: '3', iconName: 'swap-horizontal-outline', pay: "$15,99", label: "Money Transfer", miniLabel: "Transaction", amountColour: 'blue' },
   { key: '4', iconName: 'cart-outline', pay: "$51,99", label: "Grocery", miniLabel: "Shopping", amountColour: 'blue' },
   { key: '5', iconName: 'logo-apple', pay: "$-12,99", label: "Apple Store", miniLabel: "Entertainment", amountColour: 'black' },
   { key: '6', iconName: 'swap-horizontal-outline', pay: "$16,99", label: "Money Transfer", miniLabel: "Transaction", amountColour: 'blue' },
@@ -71,7 +71,7 @@ const HomeScreen = ({ navigation }) => {
             </View>
 
             <View>
-              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 20 }}>
                 <Text style={{ fontSize: 23, marginRight: 90, marginLeft: 20, color: colors.textColor }}>Transaction</Text>
                 <Text style={{ color: 'blue', fontWeight: 'bold', marginLeft: 80 }}>See all</Text>
               </View>
