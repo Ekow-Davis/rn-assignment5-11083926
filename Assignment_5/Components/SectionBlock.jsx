@@ -12,7 +12,7 @@ const SectionBlock = ({ iconName, label }) => {
        <View style={[styles.imageContainer, { backgroundColor: isDarkTheme ? '#08192D' : '#f1f1f1' }]}>
       <Ionicons name={iconName} size={30} color={colors.textColor} />
     </View>
-    <Text style={[{marginLeft: 30}, { color: colors.textColor }]}>{label}</Text>
+    <Text style={[{marginLeft: 25}, { color: colors.textColor }]}>{label}</Text>
     </View>
    
     </>
